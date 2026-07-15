@@ -426,6 +426,11 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
 .vid-solo{max-width:780px;margin:26px auto 0}
 .vid-solo .vid-card video{flex:none;aspect-ratio:16/9;height:auto;object-fit:cover}
 @media (max-width:900px){.vid-two{grid-template-columns:1fr}}
+/* portrait reels row */
+.vid-reels{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:26px}
+.vid-reels .vid-card video{flex:none;width:100%;aspect-ratio:9/16;object-fit:cover;height:auto;background:#000;display:block}
+@media (max-width:900px){.vid-reels{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.vid-reels{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}}
 
 /* gallery filter */
 .gal-filter{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
@@ -909,6 +914,36 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
           Your browser does not support the video tag.
         </video>
         <div class="vc-cap"><h3>Precision Placement</h3><span>On site · 2026</span></div>
+      </div>
+    </div>
+    <div class="vid-reels rv">
+      <div class="vid-card vid-portrait">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-reel-1.jpg">
+          <source src="assets/video/reel-1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="vc-cap"><h3>On the Job</h3><span>Field clip</span></div>
+      </div>
+      <div class="vid-card vid-portrait">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-reel-2.jpg">
+          <source src="assets/video/reel-2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="vc-cap"><h3>Crane at Work</h3><span>Field clip</span></div>
+      </div>
+      <div class="vid-card vid-portrait">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-reel-3.jpg">
+          <source src="assets/video/reel-3.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="vc-cap"><h3>Lift in Action</h3><span>Field clip</span></div>
+      </div>
+      <div class="vid-card vid-portrait">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-reel-4.jpg">
+          <source src="assets/video/reel-4.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="vc-cap"><h3>On Location</h3><span>Field clip</span></div>
       </div>
     </div>
   </div>
