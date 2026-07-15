@@ -888,14 +888,14 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
     </div>
     <div class="vid-grid rv">
       <div class="vid-card vid-portrait">
-        <video controls muted preload="none" playsinline poster="assets/img/poster-tall.jpg">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-tall.jpg">
           <source src="assets/video/site-tall.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <div class="vc-cap"><h3>Crane Lift · On Site</h3><span>Mauritius · 2026</span></div>
       </div>
       <div class="vid-card vid-landscape">
-        <video controls muted preload="none" playsinline poster="assets/img/poster-land.jpg">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-land.jpg">
           <source src="assets/video/site-land.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -904,7 +904,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
     </div>
     <div class="vid-solo rv">
       <div class="vid-card vid-landscape">
-        <video controls muted preload="none" playsinline poster="assets/img/poster-land2.jpg">
+        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-land2.jpg">
           <source src="assets/video/site-land2.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
@@ -1373,6 +1373,18 @@ if(gGrid&&gfBtns.length){
 // ---------- Reduced-motion: pause hero background video ----------
 const hbg=document.querySelector('.hero-video');
 if(hbg&&reduce){hbg.removeAttribute('autoplay');hbg.pause();}
+
+// ---------- Videos section: play when scrolled into view, pause when out ----------
+(function(){
+  const vids=[...document.querySelectorAll('.vplay')];
+  if(!vids.length||reduce)return;
+  const vio=new IntersectionObserver(entries=>entries.forEach(e=>{
+    const v=e.target;
+    if(e.isIntersecting){ v.play().catch(()=>{}); }
+    else{ v.pause(); }
+  }),{threshold:.5});
+  vids.forEach(v=>vio.observe(v));
+})();
 
 </script>
 </body>
