@@ -332,16 +332,16 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
 
 /* GALLERY (masonry columns + hover) */
 .gallery{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.gal-grid .gitem{position:relative;overflow:hidden;border:2px solid var(--ink);cursor:pointer;display:block;aspect-ratio:1/1}
+.gal-grid{display:flex;flex-wrap:wrap;gap:14px}
+.gal-grid .gitem{position:relative;overflow:hidden;border:2px solid var(--ink);cursor:pointer;display:block;height:250px;flex:1 1 300px;min-width:210px}
 .gal-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .55s cubic-bezier(.22,.8,.2,1)}
 .gitem:hover img{transform:scale(1.07)}
 .gitem::after{content:"↗";position:absolute;top:8px;right:12px;color:#fff;font-size:22px;font-weight:700;opacity:0;transform:translateY(-6px);transition:.25s;text-shadow:0 1px 4px rgba(0,0,0,.6)}
 .gitem:hover::after{opacity:1;transform:none}
 .gitem .gtag{position:absolute;left:0;bottom:0;background:var(--yellow);color:var(--ink);font-family:var(--mono);font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;opacity:0;transform:translateY(8px);transition:.25s}
 .gitem:hover .gtag{opacity:1;transform:none}
-@media (max-width:1000px){.gal-grid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:680px){.gal-grid{grid-template-columns:repeat(2,1fr);gap:10px}}
+@media (max-width:1000px){.gal-grid .gitem{height:220px;flex-basis:250px;min-width:190px}}
+@media (max-width:680px){.gal-grid{gap:10px}.gal-grid .gitem{height:180px;flex-basis:150px;min-width:44%}}
 
 /* LIGHTBOX */
 .lb{position:fixed;inset:0;background:rgba(9,10,13,.95);z-index:120;display:none;align-items:center;justify-content:center;padding:30px}
@@ -897,14 +897,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
       </div>
       <p class="sec-sub">Watch our machines at work. Real lifts, real sites, real capacity — straight from the ground across Mauritius and Madagascar.</p>
     </div>
-    <div class="vid-grid rv">
-      <div class="vid-card vid-portrait">
-        <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-tall.jpg">
-          <source src="assets/video/site-tall.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
-        <div class="vc-cap"><h3>Crane Lift · On Site</h3><span>Mauritius · 2026</span></div>
-      </div>
+    <div class="vid-two rv">
       <div class="vid-card vid-landscape">
         <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-land.jpg">
           <source src="assets/video/site-land.mp4" type="video/mp4">
@@ -912,8 +905,6 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
         </video>
         <div class="vc-cap"><h3>Steel Girder Lift</h3><span>Heavy lift · 2026</span></div>
       </div>
-    </div>
-    <div class="vid-solo rv">
       <div class="vid-card vid-landscape">
         <video class="vplay" controls muted loop playsinline preload="metadata" poster="assets/img/poster-land2.jpg">
           <source src="assets/video/site-land2.mp4" type="video/mp4">
