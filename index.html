@@ -483,6 +483,136 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
 @media (max-width:680px){.apply-panel{padding:36px 22px}}
 @media (max-width:1000px){.career-values{grid-template-columns:repeat(2,1fr)}.val-card:nth-child(2){border-right:0}.val-card:nth-child(-n+2){border-bottom:2px solid var(--ink)}}
 @media (max-width:680px){.career-values{grid-template-columns:1fr}.val-card{border-right:0;border-bottom:2px solid var(--ink)}.val-card:last-child{border-bottom:0}.job{grid-template-columns:1fr}.job .btn{justify-self:start}}
+
+/* ============================================================
+   LIGHT CONVERSION — turn every dark ("black") background white
+   and darken the text/borders/accents so everything stays legible.
+   ============================================================ */
+/* dark-scoped helpers now sit on white */
+.dark .eyebrow{color:var(--muted)}
+.dark .sec-sub{color:var(--muted)}
+.dark .btn-ghost{border-color:var(--ink);color:var(--ink)}
+.dark .btn-ghost:hover{background:var(--ink);color:var(--chalk)}
+
+/* NAV */
+header{background:var(--paper);border-bottom:1px solid var(--line)}
+header.scrolled{background:rgba(255,255,255,.72);box-shadow:0 10px 34px rgba(0,0,0,.12)}
+.brand .logo-word{color:var(--ink)}
+.brand .logo-tag{color:var(--muted)}
+.nav-links a{color:var(--ink)}
+.burger span{background:var(--ink)}
+.mobile-menu{background:var(--paper)}
+.mobile-menu a{color:var(--ink);border-bottom:1px solid var(--line)}
+
+/* HERO */
+.hero{background:var(--paper);color:var(--ink)}
+.hero-grad{background:linear-gradient(100deg,rgba(250,249,244,.94) 30%,rgba(250,249,244,.5) 70%,rgba(250,249,244,.8))}
+.hero .eyebrow{color:var(--muted)}
+.hero h1 .yl{color:var(--yellow-deep)}
+.hero .slogan{color:var(--yellow-deep)}
+.hero p.lead{color:#3c3b35}
+.cap-plate{background:rgba(255,255,255,.85);border-color:var(--line)}
+.cap-plate .cap-label{color:var(--muted)}
+.cap-plate .cap-num{color:var(--yellow-deep)}
+.cap-plate .cap-num small{color:var(--ink)}
+.cap-plate .cap-row{color:#3c3b35;border-top-color:var(--line)}
+.hero-strip{background:var(--chalk);border-top-color:var(--line)}
+.hstat,.hstat:first-child{border-color:var(--line)}
+.hstat .n{color:var(--ink)}
+.hstat .n span{color:var(--yellow-deep)}
+.hstat .l{color:var(--muted)}
+
+/* ABOUT badge */
+.about-photo .badge{background:var(--paper);color:var(--ink);box-shadow:0 6px 18px rgba(0,0,0,.15)}
+
+/* FLEET */
+.fleet{background:var(--paper);color:var(--ink)}
+.filter{color:var(--muted);border-color:var(--line)}
+.filter:hover{color:var(--ink);border-color:var(--ink)}
+.fleet-grid::-webkit-scrollbar-track{background:var(--line)}
+.plate h3{color:var(--ink)}
+.plate .specs div{color:var(--muted)}
+.plate .specs div b{color:var(--ink)}
+.fleet-note{border-color:var(--line)}
+.fleet-note p{color:var(--muted)}
+
+/* VIDEOS / STORIES */
+.videos{background:var(--paper);color:var(--ink)}
+.video-feature{border-color:var(--line)}
+.stories-side img{border-color:var(--line)}
+.vid-card{background:var(--chalk);border-color:var(--line)}
+.vid-card video{background:var(--chalk)}
+.vid-reels .vid-card video{background:var(--chalk)}
+.qr-box{background:var(--chalk);border-color:var(--line)}
+
+/* AVIATION */
+.aviation{background:var(--paper);color:var(--ink);border-top-color:var(--line)}
+
+/* QUOTE / FORM */
+.quote{background:var(--paper);color:var(--ink)}
+.q-info h2 .yl{color:var(--yellow-deep)}
+.q-info p{color:var(--muted)}
+.q-c .lbl{color:var(--muted)}
+form{background:var(--chalk);border-color:var(--line)}
+label{color:var(--muted)}
+input,select,textarea{background:var(--paper);border-color:var(--line);color:var(--ink)}
+
+/* GALLERY filter */
+.gal-filter button.active{background:var(--paper);color:var(--ink);border-color:var(--ink);font-weight:600}
+
+/* CAREERS apply panel */
+.apply-panel{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.cv-note{border-color:var(--line)}
+.cv-note .cv-hint{color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--paper);color:var(--muted);border-top:3px solid var(--yellow)}
+.foot-grid h4{color:var(--ink)}
+.foot-brand .logo-word{color:var(--ink)}
+.foot-bottom{border-top-color:var(--line)}
+
+/* LIGHTBOX */
+.lb{background:rgba(250,249,244,.97)}
+.lb-close{color:var(--ink)}
+
+/* ============================================================
+   MAKE ALL TEXT BOLD
+   ============================================================ */
+*{font-weight:700}
+h1,h2,h3,h4,h5,h6,.sec-title,.logo-word,.foot-brand .logo-word,.cap-num,.hstat .n,
+.marquee-track span,.q-info h2,.svc h3,.pillar h4,.plate h3,.val-card h4,.job h3,
+.mobile-menu a,.timeline .t-item .yr,.video-feature .vcap p{font-weight:900}
+
+/* ============================================================
+   TITLE TEXT — darken the grey kickers/subtitles
+   ============================================================ */
+.eyebrow,.dark .eyebrow,.hero .eyebrow{color:var(--ink)}
+.sec-sub,.dark .sec-sub{color:#3c3b35}
+h2.sec-title{color:var(--ink)}
+
+/* ============================================================
+   FIX LOW-CONTRAST GREY TEXT ON WHITE
+   (--muted-dark & #cfd1d8 were light greys meant for the old dark bg)
+   ============================================================ */
+:root{--muted:#413f39;--muted-dark:#413f39}
+/* light-grey leftovers that are nearly invisible on white */
+.plate .specs div b{color:var(--ink)}
+.av-list div{color:#26251f}
+.cap-plate .cap-row{color:#26251f}
+.hero p.lead{color:#26251f}
+/* body paragraphs — was mid-grey, now near-black */
+.about-copy p{color:#26251f}
+.svc p,.pillar p{color:#2c2b26}
+.sec-sub,.dark .sec-sub{color:#2c2b26}
+.timeline .t-item .tx,.plate .specs div,.fleet-note p,.q-info p,.foot-brand p,.foot-grid a{color:#413f39}
+/* --chalk text that now sits on white (was near-white, so invisible) */
+.av-copy p{color:#413f39}
+.av-copy p strong{color:var(--ink)}
+.q-c .val,.q-c .val a{color:var(--ink)}
+/* video-card caption (card bg is now light) */
+.vid-card .vc-cap{border-top-color:var(--line)}
+.vid-card .vc-cap h3{color:var(--ink)}
+.vid-card .vc-cap span{color:var(--yellow-deep)}
 </style>
 </head>
 <body>
@@ -660,7 +790,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
     <div class="sec-head rv">
       <div>
         <div class="eyebrow">Specialist capability</div>
-        <h2 class="sec-title" style="color:var(--chalk)">Aviation &amp;<br><span style="color:var(--yellow)">project cargo</span></h2>
+        <h2 class="sec-title" style="color:var(--ink)">Aviation &amp;<br><span style="color:var(--yellow)">project cargo</span></h2>
       </div>
       <p class="sec-sub">When the load is oversized, irreplaceable or time-critical, JSTL delivers — on the tarmac, at the port and on site.</p>
     </div>
@@ -694,7 +824,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
     <div class="sec-head rv">
       <div>
         <div class="eyebrow">The fleet</div>
-        <h2 class="sec-title" style="color:var(--chalk)">Rated. Serviced.<br><span style="color:var(--yellow)">Ready to lift.</span></h2>
+        <h2 class="sec-title" style="color:var(--ink)">Rated. Serviced.<br><span style="color:var(--yellow)">Ready to lift.</span></h2>
       </div>
       <p class="sec-sub">Every machine below is owned, maintained and operated by JSTL®. Filter by category to find the right unit for your job.</p>
     </div>
@@ -842,7 +972,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
 
     </div>
     <div class="fleet-note rv">
-      <p><strong style="color:var(--chalk)">Every unit is regularly serviced and maintained</strong> for optimal performance, with transparent, competitive rental rates and expert support from our team — short-term or long-term hire.</p>
+      <p><strong style="color:var(--ink)">Every unit is regularly serviced and maintained</strong> for optimal performance, with transparent, competitive rental rates and expert support from our team — short-term or long-term hire.</p>
       <a href="#quote" class="btn btn-yellow">Check Availability</a>
     </div>
   </div>
@@ -897,7 +1027,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
     <div class="sec-head rv">
       <div>
         <div class="eyebrow">In the field</div>
-        <h2 class="sec-title" style="color:var(--chalk)">Construction<br><span style="color:var(--yellow)">stories</span></h2>
+        <h2 class="sec-title" style="color:var(--ink)">Construction<br><span style="color:var(--yellow)">stories</span></h2>
       </div>
       <p class="sec-sub">Watch our machines at work. Real lifts, real sites, real capacity — straight from the ground across Mauritius and Madagascar.</p>
     </div>
@@ -1098,7 +1228,7 @@ header.scrolled{background:rgba(20,21,26,.72);-webkit-backdrop-filter:saturate(1
         <div class="q-info">
           <div class="eyebrow">Apply now</div>
           <h2>Send us your<br><span class="yl">application.</span></h2>
-          <p>Fill in the form below and our team will be in touch. Click a role's <strong style="color:var(--chalk)">Apply</strong> button and it's selected here automatically.</p>
+          <p>Fill in the form below and our team will be in touch. Click a role's <strong style="color:var(--ink)">Apply</strong> button and it's selected here automatically.</p>
           <div class="q-contacts">
             <div class="q-c"><div><div class="lbl">Applications</div><div class="val"><a href="mailto:admin@jstl.mu">admin@jstl.mu</a></div></div></div>
             <div class="q-c"><div><div class="lbl">HR line</div><div class="val"><a href="tel:+2306068400">(230) 606 8400</a></div></div></div>
